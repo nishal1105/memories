@@ -1,0 +1,102 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 60% 99%;
+    --foreground: 260 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 10% 10%;
+
+    --primary: 255 80% 75%;
+    --primary-foreground: 260 10% 98%;
+
+    --secondary: 260 20% 96%;
+    --secondary-foreground: 260 10% 10%;
+
+    --muted: 260 10% 96%;
+    --muted-foreground: 260 10% 45%;
+
+    --accent: 260 40% 96%;
+    --accent-foreground: 260 10% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 260 10% 98%;
+
+    --border: 260 20% 90%;
+    --input: 260 20% 90%;
+    --ring: 255 80% 75%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 260 10% 9%;
+    --foreground: 260 10% 98%;
+
+    --card: 260 10% 9%;
+    --card-foreground: 260 10% 98%;
+
+    --popover: 260 10% 9%;
+    --popover-foreground: 260 10% 98%;
+
+    --primary: 255 80% 75%;
+    --primary-foreground: 260 10% 9%;
+
+    --secondary: 260 10% 15%;
+    --secondary-foreground: 260 10% 98%;
+
+    --muted: 260 10% 15%;
+    --muted-foreground: 260 10% 65%;
+
+    --accent: 260 40% 15%;
+    --accent-foreground: 260 10% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 260 10% 98%;
+
+    --border: 260 10% 20%;
+    --input: 260 10% 20%;
+    --ring: 255 80% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .memory-card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .memory-btn {
+    @apply px-4 py-2 rounded-md bg-memory-primary text-white font-medium hover:bg-memory-secondary transition-colors;
+  }
+
+  .memory-text-gradient {
+    @apply bg-gradient-to-r from-memory-primary to-memory-secondary text-transparent bg-clip-text;
+  }
+
+  .memory-input {
+    @apply bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-2.5 w-full focus:outline-none focus:ring-2 focus:ring-memory-primary/50;
+  }
+
+  .memory-tag {
+    @apply bg-memory-light dark:bg-memory-secondary/30 text-memory-tertiary dark:text-memory-light px-3 py-1 rounded-full text-sm;
+  }
+}
